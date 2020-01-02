@@ -1,6 +1,15 @@
 import React from 'react'
+// import AccountContainer from './AccountContainer'
+import Transaction from './Transaction'
 
-const TransactionsList = () => {
+
+const TransactionsList = (props) => {
+
+  const renderData = () => {
+    return props.transaction.map(data => {
+      return <Transaction transaction={data} />
+    })  
+  }
 
   return (
     <table className="ui celled striped padded table">
@@ -28,7 +37,7 @@ const TransactionsList = () => {
           </th>
         </tr>
 
-        {"... your code here..."}
+        {renderData()}
 
       </tbody>
     </table>
